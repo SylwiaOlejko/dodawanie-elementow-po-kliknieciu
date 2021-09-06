@@ -21,22 +21,31 @@
 <body>
   <button>Dodaj element do listy</button>
   <ul>
-
+    
   </ul>
 
-</body>
+
 <script>
 
-  const btn = document.querySelector("button");
-    let number = 1;
+  let number = 1;
+  const btn = document.querySelector("button"); //pobieramy nasz przycisk
+  const list = document.querySelector("ul");
 
-
-    btn.addEventListener("click", addElement);
+    btn.addEventListener("click", function(){ /*funkcja anonimowa*/ 
+      const li = document.createElement("li");
+      li.textContent = number;
+      
+      list.appendChild(li);  
+      if(number%3 ==0){
+        li.classList.add("big")
+      }
+      number +=2;
+    });
 </script>
+</body>
 </html>
 
-doczytać co sie tam dzieje i jak się to robi 
-uzupelnic o informacje i zanotowac 
+
 <!-- 
 Etapy w tym projekcie
 
@@ -50,8 +59,7 @@ zmiennej
 2. ustaw nasłuchiwanie (metodę addEventListener) na click na pobrany element 
 button
 
-3. jako drugi argument metody adEventListener podaj funkcję anonimową (przypis 
-Sylwii Sprawdź jak dodać funkcję anonimową???!!!).
+3. jako drugi argument metody adEventListener podaj funkcję anonimową .
 
 4. zadaniem funkcji anonimowej jest stworzyć nowy element li, który będzie 
 zawierał w sobie tekst (właściwość textContent)  w postaci kolejnych liczb 
